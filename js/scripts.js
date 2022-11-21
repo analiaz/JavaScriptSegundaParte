@@ -36,21 +36,32 @@ console.log(nuevoEnlace)
 
 // Eventos
 
-console.log(1);
+//console.log(1);
 
-window.addEventListener('load', function(){ //load espera a que el JS y los archivos que dependen de HTML esten listos
-    console.log(32);
+//window.addEventListener('load', function(){ //load espera a que el JS y los archivos que dependen de HTML esten listos
+  //  console.log(32);
+//});
+
+//window.onload = function() {
+//    console.log(3)
+//}
+
+
+//document.addEventListener('DOMContentLoaded',function() { //Solo espera que se descarge el html, pero no espera el css o imagenes
+//    console.log(2)
+//})
+
+//(window.onscroll = function() {
+//    console.log('scrolling...')
+//})
+
+//selecciona elementos y asociarles un evento
+const btnEnviar = document.querySelector('.boton--primario')
+
+btnEnviar.addEventListener('click', function(e){
+    e.preventDefault(); //es util para validar un formulario
+
+
+    console.log('enviando formulario')
 });
 
-window.onload = function() {
-    console.log(3)
-}
-
-
-document.addEventListener('DOMContentLoaded',function() { //Solo espera que se descarge el html, pero no espera el css o imagenes
-    console.log(2)
-})
-
-window.onscroll = function() {
-    console.log('scrolling...')
-}
