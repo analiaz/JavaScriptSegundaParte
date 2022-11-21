@@ -58,12 +58,23 @@ console.log(nuevoEnlace)
 //selecciona elementos y asociarles un evento
 const btnEnviar = document.querySelector('.boton--primario')
 
-btnEnviar.addEventListener('click', function(e){
+btnEnviar.addEventListener('click', function(e){ //el click esta mas asociado al boton, una imagen, textos
     e.preventDefault(); //es util para validar un formulario
 
 
     console.log('enviando formulario')
 });
+
+// El evento submit se usa mas en formularios
+const formulario = document.querySelector('.formulario');
+formulario.addEventListener('submit', function(e){ //submit esta mas asociado al formulario
+    e.preventDefault();
+
+    console.log('enviando formulario')
+
+    
+})
+
 
 //Eventos de los Inputs y TextArea
 
@@ -87,3 +98,4 @@ function leerTexto(e) {
 
     console.log(datos);
 }
+
