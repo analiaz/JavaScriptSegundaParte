@@ -32,3 +32,25 @@ nuevoEnlace.classList.add('navegacion__enlace')
  navegacion.appendChild(nuevoEnlace);
 
 console.log(nuevoEnlace)
+
+
+// Eventos
+
+console.log(1);
+
+window.addEventListener('load', function(){ //load espera a que el JS y los archivos que dependen de HTML esten listos
+    console.log(32);
+});
+
+window.onload = function() {
+    console.log(3)
+}
+
+
+document.addEventListener('DOMContentLoaded',function() { //Solo espera que se descarge el html, pero no espera el css o imagenes
+    console.log(2)
+})
+
+window.onscroll = function() {
+    console.log('scrolling...')
+}
