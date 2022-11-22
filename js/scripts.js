@@ -92,44 +92,59 @@ formulario.addEventListener('submit', function(e){ //submit esta mas asociado al
     const { nombre, email, mensaje} = datos; //destructuring del objeto
 
     if (nombre === '' || email === '' || mensaje === '') {
-        mostrarError('todos los campos son obligatorios');
+        mostrarAlerta('todos los campos son obligatorios', true);
         return; 
     }
 
     //crear la alerta de enviar correctamente
-    mostrarMensaje('mensaje enviado correctamente');
+    mostrarAlerta('mensaje enviado correctamente');
 });
 
 function leerTexto(e) {
     datos[e.target.id] = e.target.value;
 }
 
-// muestra una alerta de que se envio correctamente
-function mostrarMensaje(mensaje){
+function mostrarAlerta(mensaje, error= null){
     const alerta = document.createElement('P');
     alerta.textContent = mensaje;
-    alerta.classList.add('correcto');
 
-    formulario.appendChild(alerta);
+    if(error){
+        alerta.classList.add('error')
+    } else {
+        alerta.classList.add('correcto')
+    }
 
-    //desaparecer despues de 5 segundos
+    formulario.appendChild(error);
+
     setTimeout(() => {
         alerta.remove();
     }, 5000);
+
 }
 
+// muestra una alerta de que se envio correctamente
+//function mostrarMensaje(mensaje){
+//    const alerta = document.createElement('P');
+//    alerta.textContent = mensaje;
+//    alerta.classList.add('correcto');
+
+//    formulario.appendChild(alerta);
+    //desaparecer despues de 5 segundos
+//    setTimeout(() => {
+//        alerta.remove();
+//    }, 5000);
+//}
 //muestra un error en pantalla
+////function mostrarError(mensaje){
+//     const error = document.createElement('P');
+//     error.textContent = mensaje;
+//     error.classList.add('error');
 
-function mostrarError(mensaje){
-     const error = document.createElement('P');
-     error.textContent = mensaje;
-     error.classList.add('error');
-
-     formulario.appendChild(error);
+//     formulario.appendChild(error);
 
      //desaparesca despuesd e 5 segundos
-     setTimeout(() => {
-        error.remove();
-     }, 5000)
-}
+//     setTimeout(() => {
+//        error.remove();
+//     }, 5000)
+//}
 
